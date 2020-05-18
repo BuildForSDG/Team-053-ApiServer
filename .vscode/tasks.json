@@ -1,0 +1,42 @@
+{
+    // Created by Okojie Davis GEORGE https://github.com/binarygeotech
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Generate API Module",
+            "type": "shell",
+            "command": "php artisan make:api-module ${input:moduleName} -S ${input:moduleSection}",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "moduleName",
+            "description": "Module Name"
+        },
+        {
+            "type": "pickString",
+            "id": "moduleSection",
+            "description": "Module Section",
+            "default": "Admin",
+            "options": [
+                "Admin",
+                "Hub",
+                "Producer",
+                "Transporter",
+                "Customer"
+            ]
+        },
+    ]
+}

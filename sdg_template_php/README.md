@@ -1,4 +1,4 @@
-Team 053 Project - FoodDistro App Server
+A one-liner phrase describing this project or app
 
 [![Codacy Badge](https://img.shields.io/badge/Code%20Quality-D-red)](https://img.shields.io/badge/Code%20Quality-D-red)
 
