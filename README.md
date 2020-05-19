@@ -1,5 +1,6 @@
 Team 053 Project - FoodDistro App Server
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/49c38c26a2474e4692ea8fbd4e9e087e)](https://app.codacy.com/gh/BuildForSDG/Team-053-ApiServer?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-053-ApiServer&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://img.shields.io/badge/Code%20Quality-D-red)](https://img.shields.io/badge/Code%20Quality-D-red)
 
 ## About
