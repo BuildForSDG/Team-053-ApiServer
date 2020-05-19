@@ -12,7 +12,8 @@ trait Pagelimit
      *
      * @return void
      */
-    public function scopeSetLimit() {
+    public function scopeSetLimit()
+    {
         $this->perPage = getPageLimit();
     }
 
@@ -21,7 +22,8 @@ trait Pagelimit
      *
      * @return void
      */
-    public function scopeLimitAndPaginate(Builder $query) {
+    public function scopeLimitAndPaginate(Builder $query)
+    {
         if (request()->has('per_page') && request()->query('per_page') === 'all') {
             $this->all();
         } else {

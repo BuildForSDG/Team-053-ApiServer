@@ -5,7 +5,6 @@ namespace App\Traits;
 use App\Models\Role;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
-
 trait HasRolesPermissions
 {
     /**
@@ -85,7 +84,7 @@ trait HasRolesPermissions
     public function hasPermissionOrFail($name)
     {
         if (!$this->hasPermission($name)) {
-            throw new UnauthorizedHttpException(null);
+            throw new UnauthorizedHttpException('User not authorized');
         }
 
         return true;

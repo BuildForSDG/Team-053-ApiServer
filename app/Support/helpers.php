@@ -75,7 +75,7 @@ if (!function_exists('generateFileName')) {
     function generateFileName($file, $path, $preserveFileUploadName = true)
     {
         if (isset($preserveFileUploadName) && $preserveFileUploadName) {
-            $filename = basename($file->getClientOriginalName(), '.' . $file->getClientOriginalExtension());
+            $filename         = basename($file->getClientOriginalName(), '.' . $file->getClientOriginalExtension());
             $filename_counter = 1;
 
             // Make sure the filename does not exist, if it does make sure to add a number to the end 1, 2, 3, etc...
@@ -109,7 +109,7 @@ if (!function_exists('handle_file_upload')) {
             Arr::wrap($filesBag->get($field));
 
         $filesPath = [];
-        $path = generatePath($prefix);
+        $path      = generatePath($prefix);
 
         foreach ($files as $file) {
             $filename = generateFileName($file, $path, $preserve_name);
@@ -162,7 +162,7 @@ if (!function_exists('generate_code')) {
         //     ->limit(1)
         //     ->get();
 
-        return $qr[0]->x;
+        return $prefix ? $prefix . $qr[0]->x : $qr[0]->x;
     }
 }
 
@@ -172,28 +172,6 @@ if (!function_exists('fix_date')) {
         return $val ? new Carbon(strtotime($val)) : null;
     }
 }
-
-if (!function_exists('setting')) {
-    /**
-     * Setting Helper
-     *
-     * @param string $key // Key to retrieve
-     * @param mixed  $default // Value if empty
-     * @param string $field // Field to retrieve
-     *
-     * @return void
-     */
-    function setting($key, $default = null, $field = null)
-    {
-        $settings = Cache::rememberForever(
-            'users',
-            function () {
-                return DB::table('settings')->get();
-            }
-        );
-    }
-}
-
 
 if (!function_exists('passport_routes')) {
     /**
